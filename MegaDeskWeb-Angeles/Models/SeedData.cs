@@ -43,7 +43,7 @@ namespace MegaDeskWeb_Angeles.Models
 
                     new DeskQuote
                     {
-                        CustomerName = "Sarah Reed",
+                        CustomerName = "Traesa Cox",
                         QuoteDate = DateTime.Parse("2020-2-12"),
                         Width = 25,
                         Depth = 25,
