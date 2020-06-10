@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MegaDeskWeb_Angeles.Migrations
 {
     [DbContext(typeof(MegaDeskWeb_AngelesContext))]
-    [Migration("20200610041033_Initial")]
+    [Migration("20200610050350_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

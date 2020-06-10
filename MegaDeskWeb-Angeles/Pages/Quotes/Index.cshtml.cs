@@ -20,10 +20,20 @@ namespace MegaDeskWeb_Angeles.Pages.Quotes
         }
 
         public IList<DeskQuote> DeskQuote { get;set; }
+        [BindProperty(SupportsGet = true)]
+        public string SearchString { get; set; }
 
         public async Task OnGetAsync()
         {
-            DeskQuote = await _context.DeskQuote.ToListAsync();
+            var quotes = from m in _context.DeskQuote
+                         select m;
+            if (!string.IsNullOrEmpty(SearchString))
+            {
+                quotes = quotes.Where(s => s.CustomerName.Contains(SearchString));
+            }
+
+            DeskQuote = await quotes.ToListAsync();
         }
+    
     }
 }
