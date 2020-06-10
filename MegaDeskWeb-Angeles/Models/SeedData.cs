@@ -43,18 +43,18 @@ namespace MegaDeskWeb_Angeles.Models
 
                     new DeskQuote
                     {
-                        CustomerName = "Sarah Reed",
+                        CustomerName = "Traesa Titel",
                         QuoteDate = DateTime.Parse("2020-2-12"),
                         Width = 25,
                         Depth = 25,
                         Drawers = 2,
-                        Material = "Oak",
+                        Material = "Pine",
                         Rush = 14,
-                        MaterialCost = 200,
+                        MaterialCost = 50,
                         SurfaceAreaCost = 0,
                         DrawerCost = 100,
                         RushCost = 0,
-                        QuoteTotal = 925
+                        QuoteTotal = 775
 
                     }
                 );
