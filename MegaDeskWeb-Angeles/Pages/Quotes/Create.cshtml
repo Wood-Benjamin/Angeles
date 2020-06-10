@@ -40,12 +40,19 @@
             </div>
             <div class="form-group">
                 <label asp-for="DeskQuote.Material" class="control-label"></label>
-                <input asp-for="DeskQuote.Material" class="form-control" />
-                <span asp-validation-for="DeskQuote.Material" class="text-danger"></span>
-            </div>
+                <div class="combobox" id="cbmMaterial">
+                    </div>
+                    <span asp-validation-for="DeskQuote.Material" class="text-danger"></span>
+                </div>
             <div class="form-group">
-                <label asp-for="DeskQuote.Rush" class="control-label"></label>
-                <input asp-for="DeskQuote.Rush" class="form-control" />
+                <label asp-for="DeskQuote.Rush" class="control-label"></label><br />
+                <select name="rush" class="form-control" id="rush">
+                    <option value="noRush">No Rush</option>
+                    <option value="3-day">3 Days</option>
+                    <option value="5-day">5 Days</option>
+                    <option value="7-day">7 Days</option>
+                    
+                </select>
                 <span asp-validation-for="DeskQuote.Rush" class="text-danger"></span>
             </div>
             <div class="form-group">

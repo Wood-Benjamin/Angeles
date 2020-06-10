@@ -1,6 +1,20 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
+/*Combo box Styling*/
+.combobox {
+    width: 120px !important;
+    height: 22px !important;
+    border: 1px solid black !important;
+    background-image: url('../../Images/down.png') !important;
+    background-repeat: no-repeat !important;
+    background-position: right !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    cursor: pointer !important;
+    align-content: center !important;
+}
+
 a.navbar-brand {
   white-space: normal;
   text-align: center;
