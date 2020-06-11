@@ -2,23 +2,59 @@
 for details on configuring this project to bundle and minify static web assets. */
 
 /*Combo box Styling*/
-.combobox {
-    width: 120px !important;
-    height: 22px !important;
-    border: 1px solid black !important;
-    background-image: url('../../Images/down.png') !important;
-    background-repeat: no-repeat !important;
-    background-position: right !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    cursor: pointer !important;
-    align-content: center !important;
+
+
+.customCombobox {
+    background-image: url("arrow.png") !important;
+    background-repeat: no-repeat;
+    background-position: right;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    align-content: center;
+    padding-right: .5em;
 }
+
+.ulcustomCombobox {
+    display: none; /*hide dropdown by default*/
+    background-color: white;
+    border: 1px solid gray;
+    border-top: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    list-style: none;
+    
+}
+
+    .ulcustomCombobox li {
+        border-top: 1px solid gray;
+        height: 37px;
+        
+    }
+
+.ulcustomCombobox li:hover{
+            background-color:lightblue;
+            cursor:pointer;
+        }
+ 
 
 a.navbar-brand {
   white-space: normal;
   text-align: center;
   word-break: break-all;
+}
+
+.imgDisplay {
+    display: inline;
+    vertical-align: middle;
+    width: 37px;
+}
+
+.imageText {
+    display: inline;
+    vertical-align: middle;
+    padding-left: 5px;
 }
 
 /* Provide sufficient contrast against white background */
@@ -44,6 +80,9 @@ html {
   font-size: 14px;
 }
 @media (min-width: 768px) {
+
+   
+
   html {
     font-size: 16px;
   }
