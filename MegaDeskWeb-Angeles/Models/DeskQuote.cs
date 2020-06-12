@@ -33,16 +33,34 @@ namespace MegaDeskWeb_Angeles.Models
         [Required(ErrorMessage = "Number of drawers is required.")]
         public int Drawers { get; set; }
 
-        [Required(ErrorMessage = "Please select a material.")]
-        public string Material { get; set; }
+        //[Required(ErrorMessage = "Please select a material.")]
+        public string Material = "Pine";
 
-        [Required(ErrorMessage = "Please select a deliver time.")]
-        public int Rush { get; set; }
-        public int SurfaceArea { get { return Width * Depth; } }
-        public int MaterialCost { get; set; }
+        //[Required(ErrorMessage = "Please select a deliver time.")]
+        public int Rush = 0;
+        public int SurfaceArea => Width * Depth;
+        public int MaterialCost = 200;
         public int SurfaceAreaCost { get; set; }
         public int DrawerCost { get; set; }
         public int RushCost { get; set; }
         public int QuoteTotal { get; set; }
+
+        public const int BASEPRICE = 200;
+        public const int BASESURFACE = 1000;
+        public const int OVERSURFACE = 1;
+        public const int LARGESURFACE = 2000;
+        public int calDrawerCost() => Drawers * 50;
+        public int calQuoteTotal() => BASEPRICE + calDrawerCost();
+        public int CalSurfaceAreaCost()
+        {
+            if (SurfaceArea > BASESURFACE)
+            {
+                return (SurfaceArea - BASESURFACE) * OVERSURFACE;
+            }
+            else
+            {
+                return 0;
+            }
+        }
     }
 }

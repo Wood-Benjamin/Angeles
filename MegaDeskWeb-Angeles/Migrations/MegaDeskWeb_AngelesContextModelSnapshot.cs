@@ -40,20 +40,10 @@ namespace MegaDeskWeb_Angeles.Migrations
                     b.Property<int>("Drawers")
                         .HasColumnType("int");
 
-                    b.Property<string>("Material")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("MaterialCost")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("QuoteDate")
                         .HasColumnType("datetime2");
 
                     b.Property<int>("QuoteTotal")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Rush")
                         .HasColumnType("int");
 
                     b.Property<int>("RushCost")
