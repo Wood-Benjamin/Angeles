@@ -37,7 +37,7 @@ namespace MegaDeskWeb_Angeles.Pages.Quotes
             }
 
             DeskQuote.DrawerCost = DeskQuote.calDrawerCost();
-            DeskQuote.SurfaceAreaCost = DeskQuote.CalSurfaceAreaCost();
+            DeskQuote.SurfaceAreaCost = DeskQuote.calSurfaceAreaCost();
             DeskQuote.QuoteTotal = DeskQuote.calQuoteTotal();
             _context.DeskQuote.Add(DeskQuote);
             await _context.SaveChangesAsync();

@@ -50,8 +50,8 @@ namespace MegaDeskWeb_Angeles.Models
         public const int OVERSURFACE = 1;
         public const int LARGESURFACE = 2000;
         public int calDrawerCost() => Drawers * 50;
-        public int calQuoteTotal() => BASEPRICE + calDrawerCost();
-        public int CalSurfaceAreaCost()
+        public int calQuoteTotal() => BASEPRICE + calDrawerCost() + calSurfaceAreaCost();
+        public int calSurfaceAreaCost()
         {
             if (SurfaceArea > BASESURFACE)
             {
