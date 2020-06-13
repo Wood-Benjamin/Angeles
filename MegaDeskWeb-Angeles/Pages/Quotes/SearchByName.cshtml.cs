@@ -21,23 +21,23 @@ namespace MegaDeskWeb_Angeles.Pages.Quotes
            
             [BindProperty(SupportsGet = true)]
             public string SearchString { get; set; }
-        public int Id { get;set }
+      //  public int Id { get;set }
 
-            public void onGet()
-            {
-                var quotes = from m in _context.DeskQuote
-                             select m;
-                if (!string.IsNullOrEmpty(SearchString))
-                {
-                    quotes = quotes.Where(s => s.CustomerName.Contains(SearchString));
-                }
+          //  public void onGet()
+            //{
+              //  var quotes = from m in _context.DeskQuote
+                //             select m;
+                //if (!string.IsNullOrEmpty(SearchString))
+               // {
+                 //   quotes = quotes.Where(s => s.CustomerName.Contains(SearchString));
+                //}
                 
               //  DeskQuote = await quotes.ToListAsync();
-            return RedirectToPage("./Index");
-        }
+           // return RedirectToPage("./Index");
+        //}
 
-        }
-    }
+        //}
+    //}
 
 }
 }
