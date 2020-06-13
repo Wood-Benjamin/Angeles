@@ -29,7 +29,7 @@ namespace MegaDeskWeb_Angeles
                     var context = services.
                         GetRequiredService<MegaDeskWeb_AngelesContext>();
                     context.Database.Migrate();
-                    SeedData.Initialize(services);
+                  //  SeedData.Initialize(services);
                 }
                 catch (Exception ex)
                 {

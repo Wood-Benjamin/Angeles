@@ -1,0 +1,171 @@
+﻿
+@using System.Text;
+@using MegaDeskWeb_Angeles.Models;
+
+@model MegaDeskWeb_Angeles.Pages.Quotes.CreateModel
+namespace MegaDeskWeb_Angeles.Pages.Quotes
+@functions {
+
+
+
+    public static int calcDrawerCost(int Drawers) => Drawers * 50;
+
+    public static int calcMaterialCost(string Material)
+    {
+        switch (Material)
+
+        {
+
+            case "Laminate":
+
+                return 100;
+
+            case "Oak":
+
+                return 200;
+
+            case "Pine":
+
+                return 50;
+
+            case "Rosewood":
+
+                return 300;
+
+            case "Veneer":
+
+                return 125;
+
+            default:
+
+                return 0;
+
+        }
+    }
+    public static int calcSurfaceAreaCost(int SurfaceArea)
+    {
+
+        if (SurfaceArea > 1000)
+
+        {
+            return (SurfaceArea - 1000) * 1;
+        }
+        else
+        {
+            return 0;
+        }
+    }
+    public static int calcRushOrderCost(int Rush, int SurfaceArea)
+
+    {
+
+        //DeskQuote.rushOrderPrices = DeskQuote.GetRushOrderPrices();
+
+        if (Rush == 14)
+
+        {
+
+            return 0;
+
+        }
+
+        else if (Rush == 3)
+
+        {
+
+            if (SurfaceArea < 1000)
+
+            {
+
+                return 60;
+
+            }
+
+            else if (SurfaceArea >= 1000 && SurfaceArea <= 2000)
+
+            {
+
+                return 70;
+
+            }
+
+            else
+
+            {
+
+                return 80;
+
+            }
+
+        }
+
+        else if (Rush == 5)
+
+        {
+
+            if (SurfaceArea < 1000)
+
+            {
+
+                return 40;
+
+            }
+
+            else if (SurfaceArea >= 1000 && SurfaceArea <= 2000)
+
+            {
+
+                return 50;
+
+            }
+
+            else
+
+            {
+
+                return 60;
+
+            }
+
+        }
+
+        else if (Rush == 7)
+
+        {
+
+            if (SurfaceArea < 1000)
+
+            {
+
+                return 30;
+
+            }
+
+            else if (SurfaceArea >= 1000 && SurfaceArea <= 2000)
+
+            {
+
+                return 35;
+
+            }
+
+            else
+
+            {
+
+                return 40;
+
+            }
+
+        }
+
+        else
+
+        {
+
+            return 1;
+
+        }
+
+    }
+}

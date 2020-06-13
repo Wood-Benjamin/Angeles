@@ -1,0 +1,13 @@
+﻿@page
+@model MegaDeskWeb_Angeles.Pages.Quotes.ViewQuoteModel
+@{
+    ViewData["Title"] = "ViewQuote";
+}
+
+<h1>ViewQuote</h1>
+
+<div class="form-group">
+    <label asp-for="DeskQuote.DrawerCost" class="control-label"></label>
+    <input asp-for="DeskQuote.DrawerCost" class="form-control" />
+    <span asp-validation-for="DeskQuote.DrawerCost" class="text-danger"></span>
+</div>

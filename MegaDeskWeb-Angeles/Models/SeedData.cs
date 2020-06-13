@@ -35,7 +35,6 @@ namespace MegaDeskWeb_Angeles.Models
                         Rush = 14,
                         MaterialCost = 200,
                         SurfaceAreaCost = 0,
-                        DrawerCost = 100,
                         RushCost = 0,
                         QuoteTotal = 925
 
@@ -52,7 +51,6 @@ namespace MegaDeskWeb_Angeles.Models
                         Rush = 14,
                         MaterialCost = 200,
                         SurfaceAreaCost = 0,
-                        DrawerCost = 100,
                         RushCost = 0,
                         QuoteTotal = 925
 

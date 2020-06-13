@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Runtime.InteropServices;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace MegaDeskWeb_Angeles.Models
 {
@@ -29,20 +30,39 @@ namespace MegaDeskWeb_Angeles.Models
         [Required(ErrorMessage = "Depth is required.")]
         public int Depth { get; set; }
 
+        [Display(Name = "# of Drawers")]
         [Range(0, 7, ErrorMessage = "Number of drawers must be between 0 and 7.")]
         [Required(ErrorMessage = "Number of drawers is required.")]
         public int Drawers { get; set; }
 
+        [Display(Name = "Surface Material")]
         [Required(ErrorMessage = "Please select a material.")]
         public string Material { get; set; }
 
+        [Display(Name = "Delivery Time")]
         [Required(ErrorMessage = "Please select a deliver time.")]
         public int Rush { get; set; }
         public int SurfaceArea { get { return Width * Depth; } }
+
+        [Display(Name = "Material Cost ")]
         public int MaterialCost { get; set; }
+
+        [Display(Name = "Additional Size Cost")]
         public int SurfaceAreaCost { get; set; }
+
+        [Display(Name = "Drawers Cost")]
         public int DrawerCost { get; set; }
+
+        [Display(Name = "Delivery Cost")]
         public int RushCost { get; set; }
+
+        [Display(Name = "Total Cost")]
         public int QuoteTotal { get; set; }
+
+
+       
+
+      
     }
+
 }
