@@ -9,81 +9,54 @@
 
 <div>
  
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.DeskQuote.CustomerName)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.DeskQuote.CustomerName)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.DeskQuote.QuoteDate)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.DeskQuote.QuoteDate)
-        </dd>
-        <dt class="col-sm-2">
+    <div>
+        @Html.DisplayNameFor(model => model.DeskQuote.CustomerName)
+        @Html.DisplayFor(model => model.DeskQuote.CustomerName)
+        @Html.DisplayNameFor(model => model.DeskQuote.QuoteDate)
+        @Html.DisplayFor(model => model.DeskQuote.QuoteDate)
+    </div>
+    <div>
             @Html.DisplayNameFor(model => model.DeskQuote.Width)
-        </dt>
-        <dd class="col-sm-10">
+        
             @Html.DisplayFor(model => model.DeskQuote.Width)
-        </dd>
-        <dt class="col-sm-2">
+        
             @Html.DisplayNameFor(model => model.DeskQuote.Depth)
-        </dt>
-        <dd class="col-sm-10">
+        
             @Html.DisplayFor(model => model.DeskQuote.Depth)
-        </dd>
-        <dt class="col-sm-2">
+        
             @Html.DisplayNameFor(model => model.DeskQuote.Drawers)
-        </dt>
-        <dd class="col-sm-10">
+       
             @Html.DisplayFor(model => model.DeskQuote.Drawers)
-        </dd>
-        <dt class="col-sm-2">
+        
             @Html.DisplayNameFor(model => model.DeskQuote.Material)
-        </dt>
-        <dd class="col-sm-10">
+        
             @Html.DisplayFor(model => model.DeskQuote.Material)
-        </dd>
-        <dt class="col-sm-2">
+       
             @Html.DisplayNameFor(model => model.DeskQuote.Rush)
-        </dt>
-        <dd class="col-sm-10">
+        
             @Html.DisplayFor(model => model.DeskQuote.Rush)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.DeskQuote.MaterialCost)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.DeskQuote.MaterialCost)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.DeskQuote.SurfaceAreaCost)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.DeskQuote.SurfaceAreaCost)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.DeskQuote.DrawerCost)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.DeskQuote.DrawerCost)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.DeskQuote.RushCost)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.DeskQuote.RushCost)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.DeskQuote.QuoteTotal)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.DeskQuote.QuoteTotal)
-        </dd>
-    </dl>
+        </div>
+    <div>
+        @Html.DisplayNameFor(model => model.DeskQuote.MaterialCost)
+
+        @Html.DisplayFor(model => model.DeskQuote.MaterialCost)
+
+        @Html.DisplayNameFor(model => model.DeskQuote.SurfaceAreaCost)
+
+        @Html.DisplayFor(model => model.DeskQuote.SurfaceAreaCost)
+
+        @Html.DisplayNameFor(model => model.DeskQuote.DrawerCost)
+
+        @Html.DisplayFor(model => model.DeskQuote.DrawerCost)
+
+        @Html.DisplayNameFor(model => model.DeskQuote.RushCost)
+
+        @Html.DisplayFor(model => model.DeskQuote.RushCost)
+
+        @Html.DisplayNameFor(model => model.DeskQuote.QuoteTotal)
+
+        @Html.DisplayFor(model => model.DeskQuote.QuoteTotal)
+    </div>
 </div>
 <div>
     <a asp-page="./Edit" asp-route-id="@Model.DeskQuote.ID">Edit</a> |

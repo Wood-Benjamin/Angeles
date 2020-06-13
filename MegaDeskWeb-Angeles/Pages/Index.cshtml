@@ -4,20 +4,18 @@
     ViewData["Title"] = "Home page";
 }
 
-    <div class="text-center">
-        <h1 class="display-4">Mega Desk Quoting System</h1>
+    <div class="">
+        <h1 class="display-4">Mega Desk<br /> Quoting System</h1>
+        <div class="homeLinks">
+            <p >
+                <a asp-page="/Quotes/Create">Create New Quote</a>
+            </p>
+            <p>
+                <a asp-page="/Quotes/Index">View All Quotes</a>
+            </p>
 
-        <p>
-            <a asp-page="/Quotes/Create">Create New Quote</a>
-        </p>
-        <p>
-            <a asp-page="/Quotes/Index">View All Quote</a>
-        </p>
-       
-        <p>
-            <a asp-page="/Quotes/Index">Exit</a>
-        </p>
-
+           
+        </div>
 
 
     </div>
