@@ -26,34 +26,34 @@ namespace MegaDeskWeb_Angeles.Models
                 context.DeskQuote.AddRange(
                     new DeskQuote
                     {
-                        CustomerName = "Sarah Reed",
-                        QuoteDate = DateTime.Parse("2020-2-12"),
-                        Width = 25,
-                        Depth = 25,
-                        Drawers = 2,
-                        Material = "Oak",
-                        Rush = 14,
-                        MaterialCost = 200,
-                        SurfaceAreaCost = 0,
-                        RushCost = 0,
-                        QuoteTotal = 925
-
+                        CustomerName = "Ben Wood",
+                        QuoteDate = DateTime.Parse("2019-10-8"),
+                        Width = 45,
+                        Depth = 45,
+                        Drawers = 0,
+                        Material = "Pine",
+                        Rush = 0,
+                        MaterialCost = 50.00M,
+                        SurfaceAreaCost = 200.00M,
+                        DrawerCost = 0.00M,
+                        RushCost = 0.00M,
+                        QuoteTotal = 34.00M
                     },
 
                     new DeskQuote
                     {
-                        CustomerName = "Traesa Cox",
-                        QuoteDate = DateTime.Parse("2019-10-8"),
-                        Width = 25,
-                        Depth = 25,
-                        Drawers = 2,
+                        CustomerName = "Mason Wood",
+                        QuoteDate = DateTime.Parse("2020-06-12"),
+                        Width = 45,
+                        Depth = 45,
+                        Drawers = 0,
                         Material = "Oak",
-                        Rush = 14,
-                        MaterialCost = 200,
-                        SurfaceAreaCost = 0,
-                        RushCost = 0,
-                        QuoteTotal = 925
-
+                        Rush = 0,
+                        MaterialCost = 50.00M,
+                        SurfaceAreaCost = 200.00M,
+                        DrawerCost = 0.00M,
+                        RushCost = 0.00M,
+                        QuoteTotal = 34
                     }
                 );
                 context.SaveChanges();
