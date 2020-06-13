@@ -64,10 +64,108 @@ namespace MegaDeskWeb_Angeles.Models
         [DataType(DataType.Currency), Column(TypeName = "decimal(18, 2)")]
         public decimal QuoteTotal { get; set; }
 
+        // Functions
 
-       
+        public const int BASEPRICE = 200;
 
-      
+        public decimal calcDrawerCost() => Drawers * 50;
+
+        public decimal calcMaterialCost()
+        {
+            switch (Material)
+            {
+                case "Laminate":
+                    return 100.00M;
+
+                case "Oak":
+                    return 200.00M;
+
+                case "Pine":
+                    return 50.00M;
+
+                case "Rosewood":
+                    return 300.00M;
+
+                case "Veneer":
+                    return 125.00M;
+
+                default:
+                    return 0.00M;
+            }
+        }
+        public decimal calcSurfaceAreaCost()
+        {
+            if (SurfaceArea > 1000)
+            {
+                return (SurfaceArea - 1000) * 1.00M;
+            }
+            else
+            {
+                return 0.00M;
+            }
+        }
+        public decimal calcRushOrderCost()
+        {
+            //DeskQuote.rushOrderPrices = DeskQuote.GetRushOrderPrices();
+
+            if (Rush == 14)
+            {
+                return 0.00M;
+            }
+            else if (Rush == 3)
+            {
+                if (SurfaceArea < 1000)
+                {
+                    return 60.00M;
+                }
+                else if (SurfaceArea >= 1000 && SurfaceArea <= 2000)
+                {
+                    return 70.00M;
+                }
+                else
+                {
+                    return 80.00M;
+                }
+            }
+            else if (Rush == 5)
+            {
+                if (SurfaceArea < 1000)
+                {
+                    return 40.00M;
+                }
+                else if (SurfaceArea >= 1000 && SurfaceArea <= 2000)
+                {
+                    return 50.00M;
+                }
+                else
+                {
+                    return 60.00M;
+                }
+            }
+            else if (Rush == 7)
+            {
+                if (SurfaceArea < 1000)
+                {
+                    return 30.00M;
+                }
+                else if (SurfaceArea >= 1000 && SurfaceArea <= 2000)
+                {
+                    return 35.00M;
+                }
+                else
+                {
+                    return 40.00M;
+                }
+            }
+            else
+            {
+                return 1.00M;
+            }
+        }
+        public decimal calcQuoteTotal()
+        {
+            return BASEPRICE + DrawerCost + MaterialCost + SurfaceAreaCost + RushCost;
+        }
     }
 
 }

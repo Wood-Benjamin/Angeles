@@ -28,188 +28,23 @@ namespace MegaDeskWeb_Angeles.Pages.Quotes
         [BindProperty]
         public DeskQuote DeskQuote { get; set; }
 
-       public decimal calcDrawerCost() => DeskQuote.Drawers * 50;
-
-        public decimal calcMaterialCost()
-        {
-            switch (DeskQuote.Material)
-
-            {
-
-                case "Laminate":
-
-                    return 100.0M;
-
-                case "Oak":
-
-                    return 200.0M;
-
-                case "Pine":
-
-                    return 50.0M;
-
-                case "Rosewood":
-
-                    return 300.0M;
-
-                case "Veneer":
-
-                    return 125.0M;
-
-                default:
-
-                    return 0.0M;
-
-            }
-        }
-        public decimal calcSurfaceAreaCost()
-        {
-
-            if (DeskQuote.SurfaceArea > 1000)
-
-            { 
-                return (DeskQuote.SurfaceArea - 1000) * 1;
-            }else
-                {
-                return 0.0M;
-            }
-        }
-        public decimal calcRushOrderCost()
-
-        {
-
-            //DeskQuote.rushOrderPrices = DeskQuote.GetRushOrderPrices();
-
-            if (DeskQuote.Rush == 14)
-
-            {
-
-                return 0.0M;
-
-            }
-
-            else if (DeskQuote.Rush == 3)
-
-            {
-
-                if (DeskQuote.SurfaceArea < 1000)
-
-                {
-
-                    return 60.0M;
-
-                }
-
-                else if (DeskQuote.SurfaceArea >= 1000 && DeskQuote.SurfaceArea <= 2000)
-
-                {
-
-                    return 70.0M;
-
-                }
-
-                else
-
-                {
-
-                    return 80.0M;
-
-                }
-
-            }
-
-            else if (DeskQuote.Rush == 5)
-
-            {
-
-                if (DeskQuote.SurfaceArea < 1000)
-
-                {
-
-                    return 40.0M;
-
-                }
-
-                else if (DeskQuote.SurfaceArea >= 1000 && DeskQuote.SurfaceArea <= 2000)
-
-                {
-
-                    return 50.0M;
-
-                }
-
-                else
-
-                {
-
-                    return 60.0M;
-
-                }
-
-            }
-
-            else if (DeskQuote.Rush == 7)
-
-            {
-
-                if (DeskQuote.SurfaceArea < 1000)
-
-                {
-
-                    return 30.0M;
-
-                }
-
-                else if (DeskQuote.SurfaceArea >= 1000 && DeskQuote.SurfaceArea <= 2000)
-
-                {
-
-                    return 35.0M;
-
-                }
-
-                else
-
-                {
-
-                    return 40.0M;
-
-                }
-
-            }
-
-            else
-
-            {
-
-                return 1.0M;
-
-            }
-
-        }
-        public decimal calcQuoteTotal()
-        {
-            return DeskQuote.DrawerCost + DeskQuote.MaterialCost + DeskQuote.SurfaceAreaCost + DeskQuote.RushCost;
-        }
 
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://aka.ms/RazorPagesCRUD.
 
-
-
         public async Task<IActionResult> OnPostAsync()
         {
-           DeskQuote.DrawerCost = calcDrawerCost();
-           DeskQuote.MaterialCost = calcMaterialCost();
-           DeskQuote.SurfaceAreaCost = calcSurfaceAreaCost();
-           DeskQuote.RushCost = calcRushOrderCost();
-           DeskQuote.QuoteTotal = calcQuoteTotal();
-
             if (!ModelState.IsValid)
             {
                 return Page();
             }
-           
+
+            DeskQuote.DrawerCost = DeskQuote.calcDrawerCost();
+            DeskQuote.MaterialCost = DeskQuote.calcMaterialCost();
+            DeskQuote.SurfaceAreaCost = DeskQuote.calcSurfaceAreaCost();
+            DeskQuote.RushCost = DeskQuote.calcRushOrderCost();
+            DeskQuote.QuoteTotal = DeskQuote.calcQuoteTotal();
+
             _context.DeskQuote.Add(DeskQuote);
             await _context.SaveChangesAsync();
 
