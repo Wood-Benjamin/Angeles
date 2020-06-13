@@ -45,18 +45,23 @@ namespace MegaDeskWeb_Angeles.Models
         public int SurfaceArea { get { return Width * Depth; } }
 
         [Display(Name = "Material Cost ")]
+        [Range(1, 100), DataType(DataType.Currency), Column(TypeName = "decimal(18, 2)")]
         public int MaterialCost { get; set; }
 
         [Display(Name = "Additional Size Cost")]
+        [Range(1, 100), DataType(DataType.Currency), Column(TypeName = "decimal(18, 2)")]
         public int SurfaceAreaCost { get; set; }
 
         [Display(Name = "Drawers Cost")]
+        [Range(1, 100), DataType(DataType.Currency), Column(TypeName = "decimal(18, 2)")]
         public int DrawerCost { get; set; }
 
         [Display(Name = "Delivery Cost")]
+        [Range(1, 100), DataType(DataType.Currency), Column(TypeName = "decimal(18, 2)")]
         public int RushCost { get; set; }
 
         [Display(Name = "Total Cost")]
+        [Range(1, 100), DataType(DataType.Currency), Column(TypeName = "decimal(18, 2)")]
         public int QuoteTotal { get; set; }
 
 
