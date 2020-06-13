@@ -12,20 +12,62 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    padding: 0em !important;
+
+    
     
 }
 
+a {
+    color: black !important;
+    text-decoration: underline ;
+}
+
+.home {
+    margin-left: 5%;
+}
+.table{
+    font-size: 80%;
+}
+
+
+    .table th, .table td {
+        padding: 0 .15em;
+        margin: 0;
+    }
+h4{
+    margin-left: 1em;
+}
+#flex {
+}
+.pageWrapper {
+    background-color: rgba(100%, 100%, 100%, 0.8);
+  
+    padding:  .001em 2em 2em 2em;
+    margin: 3%;
+}
+
+.detailBorder {
+    border: solid !important;
+    border-color: black;
+    border-width: 2px;
+    padding: 1em;
+    margin: 1em;
+}
+
 .homeLinks a {
-color: black !important;
+text-decoration: none !important;
 font-size: 150%;
 }
 
-.navbar-brand {
+#navLinks a {
     color: white !important;
+    text-decoration: None !important;
 }
 
 .navbar {
-    background-color: #101518 !important;
+    background-color: rgba(0%, 0%, 0%, 0.7) !important;
+    
 }
 
 h1, h2, h3 {
@@ -33,14 +75,14 @@ h1, h2, h3 {
     margin-bottom: 1em;
 }
 
-
-
-.cover-photo {
-    width: 800px;
+.btnBlack {
+    background-color: black !important;
+    border: none !important;
 }
 
+
 @media only screen and (max-width: 1000px) {
-    .cover-photo {
-        width: 75vw;
-    }
+  .table {
+      font-size: 50%;
+  }
 }

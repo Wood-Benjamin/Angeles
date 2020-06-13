@@ -4,111 +4,112 @@
 @{
     ViewData["Title"] = "View all Desk Quotes";
 }
+    <div class="pageWrapper">
+        <h1>View all Desk Quotes</h1>
 
-<h1>View all Desk Quotes</h1>
+        <p>
+            <a asp-page="Create">Create New</a>
+        </p>
 
-<p>
-    <a asp-page="Create">Create New</a>
-</p>
-
-<form>
-    <p>
-        Customer Name: <input type="text" asp-for="SearchString" />
-        <input type="submit" value="Filter" />
-    </p>
-</form>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                <a asp-page="./Index" asp-route-sortOrder="@Model.NameSort">
-                    @Html.DisplayNameFor(model => model.DeskQuote[0].CustomerName)
-                    </a>
-            </th>
-            <th>
-                <a asp-page="./Index" asp-route-sortOrder="@Model.DateSort">
-                    @Html.DisplayNameFor(model => model.DeskQuote[0].QuoteDate)
-                    </a>
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DeskQuote[0].Width)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DeskQuote[0].Depth)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DeskQuote[0].Drawers)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DeskQuote[0].Material)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DeskQuote[0].Rush)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DeskQuote[0].MaterialCost)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DeskQuote[0].SurfaceAreaCost)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DeskQuote[0].DrawerCost)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DeskQuote[0].RushCost)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DeskQuote[0].QuoteTotal)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model.DeskQuote)
+        <form>
+            <p>
+                Customer Name: <input type="text" asp-for="SearchString" />
+                <input type="submit" value="Filter" />
+            </p>
+        </form>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        <a asp-page="./Index" asp-route-sortOrder="@Model.NameSort">
+                            @Html.DisplayNameFor(model => model.DeskQuote[0].CustomerName)
+                        </a>
+                    </th>
+                    <th>
+                        <a asp-page="./Index" asp-route-sortOrder="@Model.DateSort">
+                            @Html.DisplayNameFor(model => model.DeskQuote[0].QuoteDate)
+                        </a>
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.DeskQuote[0].Width)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.DeskQuote[0].Depth)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.DeskQuote[0].Drawers)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.DeskQuote[0].Material)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.DeskQuote[0].Rush)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.DeskQuote[0].MaterialCost)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.DeskQuote[0].SurfaceAreaCost)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.DeskQuote[0].DrawerCost)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.DeskQuote[0].RushCost)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.DeskQuote[0].QuoteTotal)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.DeskQuote)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CustomerName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.QuoteDate)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Width)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Depth)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Drawers)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Material)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Rush)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.MaterialCost)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.SurfaceAreaCost)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DrawerCost)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.RushCost)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.QuoteTotal)
-                </td>
-                <td>
-                    <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
-                    <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
-                    <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
-                </td>
-            </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CustomerName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.QuoteDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Width)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Depth)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Drawers)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Material)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Rush)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MaterialCost)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SurfaceAreaCost)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DrawerCost)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RushCost)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.QuoteTotal)
+                    </td>
+                    <td colspan="5">
+                        <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                        <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                        <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+                    </td>
+                </tr>
         }
-    </tbody>
-</table>
+            </tbody>
+        </table>
+    </div>

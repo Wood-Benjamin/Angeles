@@ -4,93 +4,93 @@
 @{
     ViewData["Title"] = "Edit";
 }
+    <div class="pageWrapper">
+        <h1>Edit</h1>
 
-<h1>Edit</h1>
+        
+        <div class="row">
+            <div class="col-md-4">
+                <form method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="DeskQuote.ID" />
+                    <div class="form-group">
+                        <label asp-for="DeskQuote.CustomerName" class="control-label"></label>
+                        <input asp-for="DeskQuote.CustomerName" class="form-control" />
+                        <span asp-validation-for="DeskQuote.CustomerName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="DeskQuote.QuoteDate" class="control-label"></label>
+                        <input asp-for="DeskQuote.QuoteDate" class="form-control" />
+                        <span asp-validation-for="DeskQuote.QuoteDate" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="DeskQuote.Width" class="control-label"></label>
+                        <input asp-for="DeskQuote.Width" class="form-control" />
+                        <span asp-validation-for="DeskQuote.Width" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="DeskQuote.Depth" class="control-label"></label>
+                        <input asp-for="DeskQuote.Depth" class="form-control" />
+                        <span asp-validation-for="DeskQuote.Depth" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="DeskQuote.Drawers" class="control-label"></label>
+                        <input asp-for="DeskQuote.Drawers" class="form-control" />
+                        <span asp-validation-for="DeskQuote.Drawers" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="DeskQuote.Material" class="control-label"></label><br />
+                        <div class="options">
+                            <label class="material">
+                                <input type="radio" id="rosewood" asp-for="DeskQuote.Material" value="Rosewood">
+                                <img src="~/img/materials/rosewood.jpg" class="imgDisplay" />
+                                Rosewood
+                            </label>
+                            <label class="material">
+                                <input type="radio" id="pine" asp-for="DeskQuote.Material" value="Pine">
+                                <img src="~/img/materials/pine.jpg" class="imgDisplay" />
+                                Pine
+                            </label>
+                            <label class="material">
+                                <input type="radio" id="oak" asp-for="DeskQuote.Material" value="Oak">
+                                <img src="~/img/materials/oak.jpg" class="imgDisplay" />
+                                Oak
+                            </label>
+                            <label class="material">
+                                <input type="radio" id="laminate" asp-for="DeskQuote.Material" value="Laminate">
+                                <img src="~/img/materials/laminate.jpg" class="imgDisplay" />
+                                Laminate
+                            </label>
+                            <label class="material">
+                                <input type="radio" id="veneer" asp-for="DeskQuote.Material" value="Veneer">
+                                <img src="~/img/materials/veneer.jpg" class="imgDisplay" />
+                                Veneer
+                            </label>
+                        </div>
+                        <span asp-validation-for="DeskQuote.Material" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="DeskQuote.Rush" class="control-label"></label><br />
+                        <select asp-for="DeskQuote.Rush" class="form-control" id="rush">
+                            <option value="0">No Rush</option>
+                            <option value="3">3 Days</option>
+                            <option value="5">5 Days</option>
+                            <option value="7">7 Days</option>
 
-<h4>DeskQuote</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="DeskQuote.ID" />
-            <div class="form-group">
-                <label asp-for="DeskQuote.CustomerName" class="control-label"></label>
-                <input asp-for="DeskQuote.CustomerName" class="form-control" />
-                <span asp-validation-for="DeskQuote.CustomerName" class="text-danger"></span>
+                        </select>
+                        <span asp-validation-for="DeskQuote.Rush" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Save" class="btn btn-primary btnBlack" />
+                    </div>
+                </form>
             </div>
-            <div class="form-group">
-                <label asp-for="DeskQuote.QuoteDate" class="control-label"></label>
-                <input asp-for="DeskQuote.QuoteDate" class="form-control" />
-                <span asp-validation-for="DeskQuote.QuoteDate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DeskQuote.Width" class="control-label"></label>
-                <input asp-for="DeskQuote.Width" class="form-control" />
-                <span asp-validation-for="DeskQuote.Width" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DeskQuote.Depth" class="control-label"></label>
-                <input asp-for="DeskQuote.Depth" class="form-control" />
-                <span asp-validation-for="DeskQuote.Depth" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DeskQuote.Drawers" class="control-label"></label>
-                <input asp-for="DeskQuote.Drawers" class="form-control" />
-                <span asp-validation-for="DeskQuote.Drawers" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DeskQuote.Material" class="control-label"></label><br />
-                <div class="options">
-                    <label class="material">
-                        <input type="radio" id="rosewood" asp-for="DeskQuote.Material" value="Rosewood">
-                        <img src="~/img/materials/rosewood.jpg" class="imgDisplay" />
-                        Rosewood
-                    </label>
-                    <label class="material">
-                        <input type="radio" id="pine" asp-for="DeskQuote.Material" value="Pine">
-                        <img src="~/img/materials/pine.jpg" class="imgDisplay" />
-                        Pine
-                    </label>
-                    <label class="material">
-                        <input type="radio" id="oak" asp-for="DeskQuote.Material" value="Oak">
-                        <img src="~/img/materials/oak.jpg" class="imgDisplay" />
-                        Oak
-                    </label>
-                    <label class="material">
-                        <input type="radio" id="laminate" asp-for="DeskQuote.Material" value="Laminate">
-                        <img src="~/img/materials/laminate.jpg" class="imgDisplay" />
-                        Laminate
-                    </label>
-                    <label class="material">
-                        <input type="radio" id="veneer" asp-for="DeskQuote.Material" value="Veneer">
-                        <img src="~/img/materials/veneer.jpg" class="imgDisplay" />
-                        Veneer
-                    </label>
-                </div>
-                <span asp-validation-for="DeskQuote.Material" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DeskQuote.Rush" class="control-label"></label><br />
-                <select asp-for="DeskQuote.Rush" class="form-control" id="rush">
-                    <option value="0">No Rush</option>
-                    <option value="3">3 Days</option>
-                    <option value="5">5 Days</option>
-                    <option value="7">7 Days</option>
+        </div>
 
-                </select>
-                <span asp-validation-for="DeskQuote.Rush" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
+        <div>
+            <a asp-page="./Index">Back to List</a>
+        </div>
     </div>
-</div>
-
-<div>
-    <a asp-page="./Index">Back to List</a>
-</div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

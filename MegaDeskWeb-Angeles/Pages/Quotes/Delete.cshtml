@@ -4,91 +4,48 @@
 @{
     ViewData["Title"] = "Delete";
 }
+    <div class="pageWrapper">
+        <h1>Delete</h1>
 
-<h1>Delete</h1>
+        <h3>Are you sure you want to delete this?</h3>
+        <div>
+            <h4>DeskQuote</h4>
+            <div id="flex">
+                <div>
+                    <h4>Customer Information</h4>
+                    <div class="detailBorder">
+                        <span class="font-weight-bold">@Html.DisplayNameFor(model => model.DeskQuote.CustomerName):&nbsp</span>@Html.DisplayFor(model => model.DeskQuote.CustomerName)<br />
+                        <span class="font-weight-bold">@Html.DisplayNameFor(model => model.DeskQuote.QuoteDate):</span>
+                        @Html.DisplayFor(model => model.DeskQuote.QuoteDate)<br />
+                    </div>
+                </div>
+                <div>
+                    <h4>Desk Specifications</h4>
+                    <div class="detailBorder">
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>DeskQuote</h4>
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.DeskQuote.CustomerName)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.DeskQuote.CustomerName)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.DeskQuote.QuoteDate)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.DeskQuote.QuoteDate)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.DeskQuote.Width)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.DeskQuote.Width)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.DeskQuote.Depth)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.DeskQuote.Depth)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.DeskQuote.Drawers)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.DeskQuote.Drawers)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.DeskQuote.Material)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.DeskQuote.Material)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.DeskQuote.Rush)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.DeskQuote.Rush)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.DeskQuote.MaterialCost)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.DeskQuote.MaterialCost)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.DeskQuote.SurfaceAreaCost)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.DeskQuote.SurfaceAreaCost)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.DeskQuote.DrawerCost)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.DeskQuote.DrawerCost)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.DeskQuote.RushCost)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.DeskQuote.RushCost)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.DeskQuote.QuoteTotal)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.DeskQuote.QuoteTotal)
-        </dd>
-    </dl>
+                        <span class="font-weight-bold">@Html.DisplayNameFor(model => model.DeskQuote.Width):&nbsp</span>@Html.DisplayFor(model => model.DeskQuote.Width)<br />
+                        <span class="font-weight-bold">@Html.DisplayNameFor(model => model.DeskQuote.Depth):&nbsp</span>@Html.DisplayFor(model => model.DeskQuote.Depth)<br />
+                        <span class="font-weight-bold">@Html.DisplayNameFor(model => model.DeskQuote.Drawers):&nbsp</span>@Html.DisplayFor(model => model.DeskQuote.Drawers)<br />
+                        <span class="font-weight-bold">@Html.DisplayNameFor(model => model.DeskQuote.Material):&nbsp</span>@Html.DisplayFor(model => model.DeskQuote.Material)<br />
+                        <span class="font-weight-bold">@Html.DisplayNameFor(model => model.DeskQuote.Rush):&nbsp</span>@Html.DisplayFor(model => model.DeskQuote.Rush)<br />
+                    </div>
+                </div>
+                <div>
+                    <h4>Cost Breakdown</h4>
+                    <div class="detailBorder">
 
-    <form method="post">
-        <input type="hidden" asp-for="DeskQuote.ID" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-page="./Index">Back to List</a>
-    </form>
-</div>
+                        <span class="font-weight-bold">@Html.DisplayNameFor(model => model.DeskQuote.MaterialCost):&nbsp</span>@Html.DisplayFor(model => model.DeskQuote.MaterialCost)<br />
+                        <span class="font-weight-bold">@Html.DisplayNameFor(model => model.DeskQuote.SurfaceAreaCost):&nbsp</span>@Html.DisplayFor(model => model.DeskQuote.SurfaceAreaCost)<br />
+                        <span class="font-weight-bold">@Html.DisplayNameFor(model => model.DeskQuote.RushCost):&nbsp</span>@Html.DisplayFor(model => model.DeskQuote.RushCost)<br />
+                        <span class="font-weight-bold">@Html.DisplayNameFor(model => model.DeskQuote.QuoteTotal):&nbsp</span>@Html.DisplayFor(model => model.DeskQuote.QuoteTotal)<br />
+                    </div>
+                </div>
+            </div>
+            
+            <form method="post">
+                <input type="hidden" asp-for="DeskQuote.ID" />
+                <input type="submit" value="Delete" class="btn btn-danger" /> |
+                <a asp-page="./Index">Back to List</a>
+            </form>
+        </div>
+    </div>

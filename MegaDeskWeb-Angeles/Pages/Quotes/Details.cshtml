@@ -4,61 +4,41 @@
 @{
     ViewData["Title"] = "Details";
 }
+    <div class="pageWrapper">
+        <h1>Details</h1>
 
-<h1>Details</h1>
+        <div id="flex">
+            <div>
+                <h4>Customer Information</h4>
+                <div class="detailBorder">
+                    <span class="font-weight-bold">@Html.DisplayNameFor(model => model.DeskQuote.CustomerName):&nbsp</span>@Html.DisplayFor(model => model.DeskQuote.CustomerName)<br />
+                    <span class="font-weight-bold">@Html.DisplayNameFor(model => model.DeskQuote.QuoteDate):</span>
+                    @Html.DisplayFor(model => model.DeskQuote.QuoteDate)<br />
+                </div>
+            </div>
+            <div><h4>Desk Specifications</h4>
+                 <div class="detailBorder">
 
-<div>
- 
-    <div>
-        @Html.DisplayNameFor(model => model.DeskQuote.CustomerName)
-        @Html.DisplayFor(model => model.DeskQuote.CustomerName)
-        @Html.DisplayNameFor(model => model.DeskQuote.QuoteDate)
-        @Html.DisplayFor(model => model.DeskQuote.QuoteDate)
-    </div>
-    <div>
-            @Html.DisplayNameFor(model => model.DeskQuote.Width)
-        
-            @Html.DisplayFor(model => model.DeskQuote.Width)
-        
-            @Html.DisplayNameFor(model => model.DeskQuote.Depth)
-        
-            @Html.DisplayFor(model => model.DeskQuote.Depth)
-        
-            @Html.DisplayNameFor(model => model.DeskQuote.Drawers)
-       
-            @Html.DisplayFor(model => model.DeskQuote.Drawers)
-        
-            @Html.DisplayNameFor(model => model.DeskQuote.Material)
-        
-            @Html.DisplayFor(model => model.DeskQuote.Material)
-       
-            @Html.DisplayNameFor(model => model.DeskQuote.Rush)
-        
-            @Html.DisplayFor(model => model.DeskQuote.Rush)
+                     <span class="font-weight-bold">@Html.DisplayNameFor(model => model.DeskQuote.Width):&nbsp</span>@Html.DisplayFor(model => model.DeskQuote.Width)<br />
+                     <span class="font-weight-bold">@Html.DisplayNameFor(model => model.DeskQuote.Depth):&nbsp</span>@Html.DisplayFor(model => model.DeskQuote.Depth)<br />
+                     <span class="font-weight-bold">@Html.DisplayNameFor(model => model.DeskQuote.Drawers):&nbsp</span>@Html.DisplayFor(model => model.DeskQuote.Drawers)<br />
+                     <span class="font-weight-bold">@Html.DisplayNameFor(model => model.DeskQuote.Material):&nbsp</span>@Html.DisplayFor(model => model.DeskQuote.Material)<br />
+                     <span class="font-weight-bold">@Html.DisplayNameFor(model => model.DeskQuote.Rush):&nbsp</span>@Html.DisplayFor(model => model.DeskQuote.Rush)<br />
+                 </div>
+            </div>
+            <div>
+                <h4>Cost Breakdown</h4>
+                <div class="detailBorder">
+                    
+                    <span class="font-weight-bold">@Html.DisplayNameFor(model => model.DeskQuote.MaterialCost):&nbsp</span>@Html.DisplayFor(model => model.DeskQuote.MaterialCost)<br />
+                    <span class="font-weight-bold">@Html.DisplayNameFor(model => model.DeskQuote.SurfaceAreaCost):&nbsp</span>@Html.DisplayFor(model => model.DeskQuote.SurfaceAreaCost)<br />
+                    <span class="font-weight-bold">@Html.DisplayNameFor(model => model.DeskQuote.RushCost):&nbsp</span>@Html.DisplayFor(model => model.DeskQuote.RushCost)<br />
+                    <span class="font-weight-bold">@Html.DisplayNameFor(model => model.DeskQuote.QuoteTotal):&nbsp</span>@Html.DisplayFor(model => model.DeskQuote.QuoteTotal)<br />
+                </div>
+            </div>
         </div>
-    <div>
-        @Html.DisplayNameFor(model => model.DeskQuote.MaterialCost)
-
-        @Html.DisplayFor(model => model.DeskQuote.MaterialCost)
-
-        @Html.DisplayNameFor(model => model.DeskQuote.SurfaceAreaCost)
-
-        @Html.DisplayFor(model => model.DeskQuote.SurfaceAreaCost)
-
-        @Html.DisplayNameFor(model => model.DeskQuote.DrawerCost)
-
-        @Html.DisplayFor(model => model.DeskQuote.DrawerCost)
-
-        @Html.DisplayNameFor(model => model.DeskQuote.RushCost)
-
-        @Html.DisplayFor(model => model.DeskQuote.RushCost)
-
-        @Html.DisplayNameFor(model => model.DeskQuote.QuoteTotal)
-
-        @Html.DisplayFor(model => model.DeskQuote.QuoteTotal)
+        <div>
+            <a asp-page="./Edit" asp-route-id="@Model.DeskQuote.ID">Edit</a> |
+            <a asp-page="./Index">Back to List</a>
+        </div>
     </div>
-</div>
-<div>
-    <a asp-page="./Edit" asp-route-id="@Model.DeskQuote.ID">Edit</a> |
-    <a asp-page="./Index">Back to List</a>
-</div>
