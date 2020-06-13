@@ -28,9 +28,9 @@ namespace MegaDeskWeb_Angeles.Pages.Quotes
         [BindProperty]
         public DeskQuote DeskQuote { get; set; }
 
-       public int calcDrawerCost() => DeskQuote.Drawers * 50;
+       public decimal calcDrawerCost() => DeskQuote.Drawers * 50;
 
-        public int calcMaterialCost()
+        public decimal calcMaterialCost()
         {
             switch (DeskQuote.Material)
 
@@ -62,7 +62,7 @@ namespace MegaDeskWeb_Angeles.Pages.Quotes
 
             }
         }
-        public int calcSurfaceAreaCost()
+        public decimal calcSurfaceAreaCost()
         {
 
             if (DeskQuote.SurfaceArea > 1000)
@@ -74,7 +74,7 @@ namespace MegaDeskWeb_Angeles.Pages.Quotes
                 return 0;
             }
         }
-        public int calcRushOrderCost()
+        public decimal calcRushOrderCost()
 
         {
 
@@ -187,7 +187,7 @@ namespace MegaDeskWeb_Angeles.Pages.Quotes
             }
 
         }
-        public int calcQuoteTotal()
+        public decimal calcQuoteTotal()
         {
             return DeskQuote.DrawerCost + DeskQuote.MaterialCost + DeskQuote.SurfaceAreaCost + DeskQuote.RushCost;
         }

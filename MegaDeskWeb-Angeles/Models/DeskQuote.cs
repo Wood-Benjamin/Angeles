@@ -46,23 +46,23 @@ namespace MegaDeskWeb_Angeles.Models
 
         [Display(Name = "Material Cost ")]
         [Range(1, 100), DataType(DataType.Currency), Column(TypeName = "decimal(18, 2)")]
-        public int MaterialCost { get; set; }
+        public decimal MaterialCost { get; set; }
 
         [Display(Name = "Additional Size Cost")]
         [Range(1, 100), DataType(DataType.Currency), Column(TypeName = "decimal(18, 2)")]
-        public int SurfaceAreaCost { get; set; }
+        public decimal SurfaceAreaCost { get; set; }
 
         [Display(Name = "Drawers Cost")]
         [Range(1, 100), DataType(DataType.Currency), Column(TypeName = "decimal(18, 2)")]
-        public int DrawerCost { get; set; }
+        public decimal DrawerCost { get; set; }
 
         [Display(Name = "Delivery Cost")]
         [Range(1, 100), DataType(DataType.Currency), Column(TypeName = "decimal(18, 2)")]
-        public int RushCost { get; set; }
+        public decimal RushCost { get; set; }
 
         [Display(Name = "Total Cost")]
         [Range(1, 100), DataType(DataType.Currency), Column(TypeName = "decimal(18, 2)")]
-        public int QuoteTotal { get; set; }
+        public decimal QuoteTotal { get; set; }
 
 
        
