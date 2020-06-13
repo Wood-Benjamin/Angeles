@@ -40,6 +40,12 @@ namespace MegaDeskWeb_Angeles.Migrations
                     b.Property<int>("Drawers")
                         .HasColumnType("int");
 
+                    b.Property<string>("Material")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("MaterialCost")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("QuoteDate")
                         .HasColumnType("datetime2");
 

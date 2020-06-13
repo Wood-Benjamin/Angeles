@@ -5,6 +5,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Runtime.InteropServices;
+using Microsoft.CodeAnalysis;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace MegaDeskWeb_Angeles.Models
 {
@@ -34,12 +36,12 @@ namespace MegaDeskWeb_Angeles.Models
         public int Drawers { get; set; }
 
         //[Required(ErrorMessage = "Please select a material.")]
-        public string Material = "Pine";
+        public string Material { get; set; }
 
         //[Required(ErrorMessage = "Please select a deliver time.")]
         public int Rush = 0;
         public int SurfaceArea => Width * Depth;
-        public int MaterialCost = 200;
+        public int MaterialCost { get; set; }
         public int SurfaceAreaCost { get; set; }
         public int DrawerCost { get; set; }
         public int RushCost { get; set; }
@@ -49,8 +51,10 @@ namespace MegaDeskWeb_Angeles.Models
         public const int BASESURFACE = 1000;
         public const int OVERSURFACE = 1;
         public const int LARGESURFACE = 2000;
+
+        public int calQuoteTotal() => BASEPRICE + calDrawerCost() + calSurfaceAreaCost() + calMaterialCost();
         public int calDrawerCost() => Drawers * 50;
-        public int calQuoteTotal() => BASEPRICE + calDrawerCost() + calSurfaceAreaCost();
+        
         public int calSurfaceAreaCost()
         {
             if (SurfaceArea > BASESURFACE)
@@ -60,6 +64,25 @@ namespace MegaDeskWeb_Angeles.Models
             else
             {
                 return 0;
+            }
+        }
+        public int calMaterialCost()
+        {
+            
+            switch (Material)
+            {
+                case "Laminate":
+                    return 100;
+                case "Oak":
+                    return 200;
+                case "Pine":
+                    return 50;
+                case "Rosewood":
+                    return 300;
+                case "Veneer":
+                    return 125;
+                default:
+                    return 0;
             }
         }
     }

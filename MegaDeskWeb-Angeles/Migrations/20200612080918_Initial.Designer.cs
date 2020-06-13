@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MegaDeskWeb_Angeles.Migrations
 {
     [DbContext(typeof(MegaDeskWeb_AngelesContext))]
-    [Migration("20200612072443_Initial")]
+    [Migration("20200612080918_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -40,6 +40,12 @@ namespace MegaDeskWeb_Angeles.Migrations
                         .HasColumnType("int");
 
                     b.Property<int>("Drawers")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Material")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("MaterialCost")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("QuoteDate")

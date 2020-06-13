@@ -18,6 +18,8 @@ namespace MegaDeskWeb_Angeles.Migrations
                     Width = table.Column<int>(nullable: false),
                     Depth = table.Column<int>(nullable: false),
                     Drawers = table.Column<int>(nullable: false),
+                    Material = table.Column<string>(nullable: true),
+                    MaterialCost = table.Column<int>(nullable: false),
                     SurfaceAreaCost = table.Column<int>(nullable: false),
                     DrawerCost = table.Column<int>(nullable: false),
                     RushCost = table.Column<int>(nullable: false),

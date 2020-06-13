@@ -36,6 +36,7 @@ namespace MegaDeskWeb_Angeles.Pages.Quotes
                 return Page();
             }
 
+            DeskQuote.MaterialCost = DeskQuote.calMaterialCost();
             DeskQuote.DrawerCost = DeskQuote.calDrawerCost();
             DeskQuote.SurfaceAreaCost = DeskQuote.calSurfaceAreaCost();
             DeskQuote.QuoteTotal = DeskQuote.calQuoteTotal();
