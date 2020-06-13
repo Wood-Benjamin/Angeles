@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MegaDeskWeb_Angeles.Migrations
 {
     [DbContext(typeof(MegaDeskWeb_AngelesContext))]
-    [Migration("20200613043329_Initial")]
+    [Migration("20200613050618_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -36,8 +36,8 @@ namespace MegaDeskWeb_Angeles.Migrations
                     b.Property<int>("Depth")
                         .HasColumnType("int");
 
-                    b.Property<int>("DrawerCost")
-                        .HasColumnType("int");
+                    b.Property<decimal>("DrawerCost")
+                        .HasColumnType("decimal(18, 2)");
 
                     b.Property<int>("Drawers")
                         .HasColumnType("int");
@@ -46,23 +46,23 @@ namespace MegaDeskWeb_Angeles.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("MaterialCost")
-                        .HasColumnType("int");
+                    b.Property<decimal>("MaterialCost")
+                        .HasColumnType("decimal(18, 2)");
 
                     b.Property<DateTime>("QuoteDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("QuoteTotal")
-                        .HasColumnType("int");
+                    b.Property<decimal>("QuoteTotal")
+                        .HasColumnType("decimal(18, 2)");
 
                     b.Property<int>("Rush")
                         .HasColumnType("int");
 
-                    b.Property<int>("RushCost")
-                        .HasColumnType("int");
+                    b.Property<decimal>("RushCost")
+                        .HasColumnType("decimal(18, 2)");
 
-                    b.Property<int>("SurfaceAreaCost")
-                        .HasColumnType("int");
+                    b.Property<decimal>("SurfaceAreaCost")
+                        .HasColumnType("decimal(18, 2)");
 
                     b.Property<int>("Width")
                         .HasColumnType("int");
