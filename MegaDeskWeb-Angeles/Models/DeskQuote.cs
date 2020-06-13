@@ -159,7 +159,7 @@ namespace MegaDeskWeb_Angeles.Models
             }
             else
             {
-                return 1.00M;
+                return 0.00M;
             }
         }
         public decimal calcQuoteTotal()
