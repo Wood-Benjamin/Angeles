@@ -6,15 +6,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Pages\NewFolder\**" />
     <Compile Remove="wwwroot\NewFolder1\**" />
+    <Content Remove="Pages\NewFolder\**" />
     <Content Remove="wwwroot\NewFolder1\**" />
+    <EmbeddedResource Remove="Pages\NewFolder\**" />
     <EmbeddedResource Remove="wwwroot\NewFolder1\**" />
+    <None Remove="Pages\NewFolder\**" />
     <None Remove="wwwroot\NewFolder1\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Remove="Migrations\20200610041033_Initial.cs" />
-    <Compile Remove="Migrations\20200610041033_Initial.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -29,7 +28,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Pages\NewFolder\" />
     <Folder Include="wwwroot\lib\NewFolder\" />
   </ItemGroup>
 

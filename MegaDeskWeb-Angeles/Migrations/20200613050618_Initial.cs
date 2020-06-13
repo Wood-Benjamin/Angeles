@@ -20,11 +20,11 @@ namespace MegaDeskWeb_Angeles.Migrations
                     Drawers = table.Column<int>(nullable: false),
                     Material = table.Column<string>(nullable: false),
                     Rush = table.Column<int>(nullable: false),
-                    MaterialCost = table.Column<int>(nullable: false),
-                    SurfaceAreaCost = table.Column<int>(nullable: false),
-                    DrawerCost = table.Column<int>(nullable: false),
-                    RushCost = table.Column<int>(nullable: false),
-                    QuoteTotal = table.Column<int>(nullable: false)
+                    MaterialCost = table.Column<decimal>(type: "decimal(18, 2)", nullable: false),
+                    SurfaceAreaCost = table.Column<decimal>(type: "decimal(18, 2)", nullable: false),
+                    DrawerCost = table.Column<decimal>(type: "decimal(18, 2)", nullable: false),
+                    RushCost = table.Column<decimal>(type: "decimal(18, 2)", nullable: false),
+                    QuoteTotal = table.Column<decimal>(type: "decimal(18, 2)", nullable: false)
                 },
                 constraints: table =>
                 {
