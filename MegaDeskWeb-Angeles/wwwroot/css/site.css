@@ -3,59 +3,45 @@ for details on configuring this project to bundle and minify static web assets. 
 
 /*Combo box Styling*/
 
-
-.customCombobox {
-    background-image: url("arrow.png") !important;
-    background-repeat: no-repeat;
-    background-position: right;
-    margin: 0;
-    padding: 0;
-    cursor: pointer;
-    align-content: center;
-    padding-right: .5em;
+.options {
+    display: flex;
 }
 
-.ulcustomCombobox {
-    display: none; /*hide dropdown by default*/
-    background-color: white;
-    border: 1px solid gray;
-    border-top: none;
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    list-style: none;
-    
+.material{
+    margin-right: 1.25em;
+    text-align: center;
+    font-size: .75em;
+}
+/* HIDE RADIO */
+[type=radio] { 
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
 
-    .ulcustomCombobox li {
-        border-top: 1px solid gray;
-        height: 37px;
-        
+/* IMAGE STYLES */
+[type=radio] + img {
+  cursor: pointer;
+}
+
+/* CHECKED STYLES */
+    [type=radio]:checked + img {
+        outline: 2px solid orange;
+
     }
 
-.ulcustomCombobox li:hover{
-            background-color:lightblue;
-            cursor:pointer;
-        }
- 
+.imgDisplay:hover {
+    box-shadow: 2px 5px 9px #888888 !important;
+}
 
 a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
 }
 
-.imgDisplay {
-    display: inline;
-    vertical-align: middle;
-    width: 37px;
-}
 
-.imageText {
-    display: inline;
-    vertical-align: middle;
-    padding-left: 5px;
-}
 
 /* Provide sufficient contrast against white background */
 a {

@@ -40,51 +40,43 @@
                 <span asp-validation-for="DeskQuote.Drawers" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="DeskQuote.Material" class="control-label"></label>
-                <div class="customCombobox form-control" id="customCombobox1">
-                </div><ul class="ulcustomCombobox" id="ulcustomCombobox1">
-                    <li id=" Rosewood">
-                        <a>
-                            <img src="~/img/materials/rosewood.jpg" class="imgDisplay" />
-                            <p class="imageText">Rosewood</p>
-                        </a>
-                    </li>
-                    <li id=" Oak">
-                        <a>
-                            <img src="~/img/materials/oak.jpg" class="imgDisplay" />
-                            <p class="imageText">Oak</p>
-                        </a>
-                    </li>
-                    <li id=" Veneer">
-                        <a>
-                            <img src="~/img/materials/veneer.jpg" class="imgDisplay" />
-                            <p class="imageText">Veneer</p>
-                        </a>
-                    </li>
-                    <li id=" Pine">
-                        <a>
-                            <img src="~/img/materials/pine.jpg" class="imgDisplay" />
-                            <p class="imageText">Pine</p>
-                        </a>
-                    </li>
-                    <li id=" Laminate">
-                        <a>
-                            <img src="~/img/materials/laminate.jpg" class="imgDisplay" />
-                            <p class="imageText">Laminate</p>
-                        </a>
-                    </li>
-
-                </ul>
-
+                <label asp-for="DeskQuote.Material" class="control-label"></label><br />
+                <div class="options">
+                    <label class="material">
+                        <input type="radio" id="rosewood" asp-for="DeskQuote.Material" value="Rosewood">
+                        <img src="~/img/materials/rosewood.jpg" class="imgDisplay" />
+                        Rosewood
+                    </label>
+                    <label class="material">
+                        <input type="radio" id="pine" asp-for="DeskQuote.Material" value="Pine">
+                        <img src="~/img/materials/pine.jpg" class="imgDisplay" />
+                        Pine
+                    </label>
+                    <label class="material">
+                        <input type="radio" id="oak" asp-for="DeskQuote.Material" value="Oak">
+                        <img src="~/img/materials/oak.jpg" class="imgDisplay" />
+                        Oak
+                    </label>
+                    <label class="material">
+                        <input type="radio" id="laminate" asp-for="DeskQuote.Material" value="Laminate">
+                        <img src="~/img/materials/laminate.jpg" class="imgDisplay" />
+                        Laminate
+                    </label>
+                    <label class="material">
+                        <input type="radio" id="veneer" asp-for="DeskQuote.Material" value="Veneer">
+                        <img src="~/img/materials/veneer.jpg" class="imgDisplay" />
+                        Veneer
+                    </label>
+                </div>
                 <span asp-validation-for="DeskQuote.Material" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="DeskQuote.Rush" class="control-label"></label><br />
-                <select name="rush" class="form-control" id="rush">
-                    <option value="noRush">No Rush</option>
-                    <option value="3-day">3 Days</option>
-                    <option value="5-day">5 Days</option>
-                    <option value="7-day">7 Days</option>
+                <select asp-for="DeskQuote.Rush" class="form-control" id="rush">
+                    <option value="0">No Rush</option>
+                    <option value="3">3 Days</option>
+                    <option value="5">5 Days</option>
+                    <option value="7">7 Days</option>
 
                 </select>
                 <span asp-validation-for="DeskQuote.Rush" class="text-danger"></span>
