@@ -19,21 +19,48 @@ namespace MegaDeskWeb_Angeles.Pages.Quotes
             _context = context;
         }
 
-        public IList<DeskQuote> DeskQuote { get;set; }
+        public IList<DeskQuote> DeskQuote { get; set; }
         [BindProperty(SupportsGet = true)]
         public string SearchString { get; set; }
+        public string NameSort { get; set; }
+        public string DateSort { get; set; }
 
-        public async Task OnGetAsync()
+        public async Task OnGetAsync(string sortOrder)
         {
-            var quotes = from m in _context.DeskQuote
-                         select m;
+
+
+            NameSort = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            DateSort = sortOrder == "Date" ? "date_desc" : "Date";
+
+            IQueryable<DeskQuote> quotes = from s in _context.DeskQuote
+                                           select s;
+
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    quotes = quotes.OrderByDescending(s => s.CustomerName);
+                    break;
+                case "Date":
+                    quotes = quotes.OrderBy(s => s.QuoteDate);
+                    break;
+                case "date_desc":
+                    quotes = quotes.OrderByDescending(s => s.QuoteDate);
+                    break;
+                default:
+                    quotes = quotes.OrderBy(s => s.CustomerName);
+                    break;
+            }
+
+           // var quotes = from m in _context.DeskQuote
+           //              select m;
             if (!string.IsNullOrEmpty(SearchString))
             {
                 quotes = quotes.Where(s => s.CustomerName.Contains(SearchString));
             }
 
+            DeskQuote = await quotes.AsNoTracking().ToListAsync();
             DeskQuote = await quotes.ToListAsync();
         }
-    
+
     }
 }
