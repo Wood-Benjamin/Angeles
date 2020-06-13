@@ -38,27 +38,27 @@ namespace MegaDeskWeb_Angeles.Pages.Quotes
 
                 case "Laminate":
 
-                    return 100;
+                    return 100.0M;
 
                 case "Oak":
 
-                    return 200;
+                    return 200.0M;
 
                 case "Pine":
 
-                    return 50;
+                    return 50.0M;
 
                 case "Rosewood":
 
-                    return 300;
+                    return 300.0M;
 
                 case "Veneer":
 
-                    return 125;
+                    return 125.0M;
 
                 default:
 
-                    return 0;
+                    return 0.0M;
 
             }
         }
@@ -71,7 +71,7 @@ namespace MegaDeskWeb_Angeles.Pages.Quotes
                 return (DeskQuote.SurfaceArea - 1000) * 1;
             }else
                 {
-                return 0;
+                return 0.0M;
             }
         }
         public decimal calcRushOrderCost()
@@ -84,7 +84,7 @@ namespace MegaDeskWeb_Angeles.Pages.Quotes
 
             {
 
-                return 0;
+                return 0.0M;
 
             }
 
@@ -96,7 +96,7 @@ namespace MegaDeskWeb_Angeles.Pages.Quotes
 
                 {
 
-                    return 60;
+                    return 60.0M;
 
                 }
 
@@ -104,7 +104,7 @@ namespace MegaDeskWeb_Angeles.Pages.Quotes
 
                 {
 
-                    return 70;
+                    return 70.0M;
 
                 }
 
@@ -112,7 +112,7 @@ namespace MegaDeskWeb_Angeles.Pages.Quotes
 
                 {
 
-                    return 80;
+                    return 80.0M;
 
                 }
 
@@ -126,7 +126,7 @@ namespace MegaDeskWeb_Angeles.Pages.Quotes
 
                 {
 
-                    return 40;
+                    return 40.0M;
 
                 }
 
@@ -134,7 +134,7 @@ namespace MegaDeskWeb_Angeles.Pages.Quotes
 
                 {
 
-                    return 50;
+                    return 50.0M;
 
                 }
 
@@ -142,7 +142,7 @@ namespace MegaDeskWeb_Angeles.Pages.Quotes
 
                 {
 
-                    return 60;
+                    return 60.0M;
 
                 }
 
@@ -156,7 +156,7 @@ namespace MegaDeskWeb_Angeles.Pages.Quotes
 
                 {
 
-                    return 30;
+                    return 30.0M;
 
                 }
 
@@ -164,7 +164,7 @@ namespace MegaDeskWeb_Angeles.Pages.Quotes
 
                 {
 
-                    return 35;
+                    return 35.0M;
 
                 }
 
@@ -172,7 +172,7 @@ namespace MegaDeskWeb_Angeles.Pages.Quotes
 
                 {
 
-                    return 40;
+                    return 40.0M;
 
                 }
 
@@ -182,7 +182,7 @@ namespace MegaDeskWeb_Angeles.Pages.Quotes
 
             {
 
-                return 1;
+                return 1.0M;
 
             }
 
@@ -195,22 +195,15 @@ namespace MegaDeskWeb_Angeles.Pages.Quotes
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://aka.ms/RazorPagesCRUD.
 
-        protected void Page_Load(object sender, EventArgs e)
-        {
-           
-    
-                DeskQuote.QuoteDate = DateTime.Today;
-                
-            
-        }
+
 
         public async Task<IActionResult> OnPostAsync()
         {
-            DeskQuote.DrawerCost = calcDrawerCost();
-            DeskQuote.MaterialCost = calcMaterialCost();
-            DeskQuote.SurfaceAreaCost = calcSurfaceAreaCost();
-            DeskQuote.RushCost = calcRushOrderCost();
-            DeskQuote.QuoteTotal = calcQuoteTotal();
+           DeskQuote.DrawerCost = calcDrawerCost();
+           DeskQuote.MaterialCost = calcMaterialCost();
+           DeskQuote.SurfaceAreaCost = calcSurfaceAreaCost();
+           DeskQuote.RushCost = calcRushOrderCost();
+           DeskQuote.QuoteTotal = calcQuoteTotal();
 
             if (!ModelState.IsValid)
             {
